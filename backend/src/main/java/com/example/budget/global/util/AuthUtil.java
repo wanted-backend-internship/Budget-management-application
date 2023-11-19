@@ -14,20 +14,24 @@ public class AuthUtil {
     private final TokenUtil tokenUtil;
 
     public Long getLoginUserIndex() {
-        Optional<User> user = getLoginUser();
-        Long userId = user.get().getId();
+        User user = getLoginUser();
+        Long userId = user.getId();
         return userId;
     }
 
-    public Optional<User> getLoginUser() {
+    public User getLoginUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
-        return (Optional<User>) principal;
+        return (User) principal;
     }
 
-    public Long  getLoginUserIdFromToken(HttpServletRequest request) {
+    public Boolean isLoggedInUserSameCurrentUser (HttpServletRequest request) {
+        Long isLoggedInUserId = getLoginUserIndex();
         String accessToken = tokenUtil.getJWTTokenFromHeader(request);
-        Long userId = Long.parseLong(tokenUtil.getUserIdFromToken(accessToken));
-        return userId;
+        Long currentUserId = Long.valueOf(tokenUtil.getUserIdFromToken(accessToken));
+        if (isLoggedInUserId.equals(currentUserId)) {
+            return true;
+        }
+        return false;
     }
 }
