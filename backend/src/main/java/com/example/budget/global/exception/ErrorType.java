@@ -47,7 +47,13 @@ public enum ErrorType {
     NULL_VALUE_EXIST(HttpStatus.BAD_REQUEST, "CLIENT-001", "null 값은 허용할 수 없습니다."),
 
     // 내부 서버 오류
-    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "SERVER-001", "내부 서버 오류로 인해 요청을 처리할 수 없습니다.");
+    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "SERVER-001", "내부 서버 오류로 인해 요청을 처리할 수 없습니다."),
+
+    // 예산이 100 퍼센트가 아닌 경우
+    BUDGET_PERCENT_ERROR(HttpStatus.BAD_REQUEST, "BUDGET-001", "예산은 총 100 퍼센트여야 합니다."),
+
+    // 찾는 예산이 없는 경우
+    BUDGET_NOT_FOUND(HttpStatus.BAD_REQUEST, "BUDGET-002", "해당하는 예산이 존재하지 않습니다.");
 
 
     private final HttpStatus status;
