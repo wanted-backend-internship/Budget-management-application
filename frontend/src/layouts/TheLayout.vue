@@ -32,6 +32,7 @@ import TheFooter from './TheFooter.vue';
 
 .content-row {
   @include container(row, center, center, 100%, auto);
+  background-color: white;
   position: fixed;
   bottom: 0;
 }
