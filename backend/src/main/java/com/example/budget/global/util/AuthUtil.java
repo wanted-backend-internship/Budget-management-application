@@ -1,6 +1,8 @@
 package com.example.budget.global.util;
 
 import com.example.budget.domain.user.User;
+import com.example.budget.global.exception.ApiException;
+import com.example.budget.global.exception.ErrorType;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -25,13 +27,12 @@ public class AuthUtil {
         return (User) principal;
     }
 
-    public Boolean isLoggedInUserSameCurrentUser (HttpServletRequest request) {
+    public void isLoggedInUserSameCurrentUser (HttpServletRequest request) {
         Long isLoggedInUserId = getLoginUserIndex();
         String accessToken = tokenUtil.getJWTTokenFromHeader(request);
         Long currentUserId = Long.valueOf(tokenUtil.getUserIdFromToken(accessToken));
-        if (isLoggedInUserId.equals(currentUserId)) {
-            return true;
+        if (!isLoggedInUserId.equals(currentUserId)) {
+            throw new ApiException(ErrorType.USER_NOT_AUTHORIZED);
         }
-        return false;
     }
 }
