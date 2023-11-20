@@ -1,19 +1,13 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import { useQuery } from 'vue-query';
-import { loginUserInfo } from '../api/UserApi.ts';
+import { ref } from 'vue';
 import { localLogin } from '../api/AuthApi.ts';
 import { useAuthStore } from '../store/AuthStore.ts';
 import router from '../router';
+import { loginUserInfo } from '../api/UserApi.ts';
 
 const email = ref('');
 const password = ref('');
 const authStore = useAuthStore();
-const isLoggedIn = computed(() => authStore.isLoggedIn);
-
-useQuery(['loginUserInfo'], loginUserInfo, {
-  enabled: computed(() => isLoggedIn.value),
-});
 
 const handleLogin = async () => {
   const userData = {
@@ -25,6 +19,10 @@ const handleLogin = async () => {
     const response = await localLogin(userData);
     if (response.status == 200) {
       authStore.setLoginStatus(true);
+
+      const userInfoResponse = await loginUserInfo();
+      localStorage.setItem('userInfo', JSON.stringify(userInfoResponse));
+
       await router.push('/dash-board');
     }
   } catch (error) {
@@ -72,7 +70,6 @@ const handleLogin = async () => {
 
 .container-col {
   @include container(column, flex-start, flex-start, 100%, 100%);
-  background-color: $background;
 }
 
 .content-col {

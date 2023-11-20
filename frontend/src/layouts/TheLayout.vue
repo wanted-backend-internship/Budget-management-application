@@ -5,13 +5,13 @@ import TheFooter from './TheFooter.vue';
 
 <template>
   <div class="container-col">
-    <div class="content-col">
+    <div class="content-col" style="overflow-y: hidden; height: 120px">
       <TheHeader />
     </div>
-    <div class="content-col" style="top: 120px">
+    <div class="content-col" style="top: 120px; overflow-y: scroll">
       <router-view />
     </div>
-    <div class="content-row">
+    <div class="content-row" style="overflow-y: hidden">
       <TheFooter />
     </div>
   </div>
@@ -26,7 +26,7 @@ import TheFooter from './TheFooter.vue';
 }
 
 .content-col {
-  @include container(column, flex-start, flex-start, 100%, 100%);
+  @include container(column, flex-start, flex-start, 100%, 60%);
   position: fixed;
 }
 

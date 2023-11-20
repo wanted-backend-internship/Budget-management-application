@@ -86,7 +86,6 @@ const handleRegister = async () => {
 
 .container-col {
   @include container(column, flex-start, flex-start, 100%, 100%);
-  background-color: $background;
 }
 
 .content-col {

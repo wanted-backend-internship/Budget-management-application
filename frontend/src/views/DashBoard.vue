@@ -1,10 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+let userInfo = localStorage.getItem('userInfo');
+userInfo = userInfo ? JSON.parse(userInfo) : {};
+</script>
 
 <template>
   <div class="container-col">
     <div class="content-col">
       <div class="font_head">이번달 예산</div>
-      <div class="font_money">KRW 500000</div>
+      <div class="font_money">{{ userInfo.budgetTotal }} 원</div>
     </div>
   </div>
 </template>
