@@ -1,6 +1,7 @@
 package com.example.budget.global.util;
 
 import com.example.budget.domain.user.User;
+import com.example.budget.domain.user.UserRepository;
 import com.example.budget.global.exception.ApiException;
 import com.example.budget.global.exception.ErrorType;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class AuthUtil {
     private final TokenUtil tokenUtil;
+    private final UserRepository userRepository;
 
     public Long getLoginUserIndex() {
         User user = getLoginUser();
@@ -25,6 +27,12 @@ public class AuthUtil {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
         return (User) principal;
+    }
+
+    public User getLoginUserForLazy() {
+        Long id = getLoginUserIndex();
+        User user = userRepository.findById(id).get();
+        return user;
     }
 
     public void isLoggedInUserSameCurrentUser (HttpServletRequest request) {
