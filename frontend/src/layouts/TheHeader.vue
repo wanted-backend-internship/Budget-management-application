@@ -11,10 +11,10 @@ library.add(faBell, faArrowRightToBracket, faArrowRightFromBracket);
 
 <template>
   <div class="container-row">
-    <div style="margin: 50px 0 30px 20px">
+    <div style="margin: 50px 0 20px 20px">
       <img src="../assets/images/logo-white.svg" width="120" />
     </div>
-    <div style="margin: 50px 20px 30px 0">
+    <div style="margin: 50px 20px 20px 0">
       <div class="container-row">
         <font-awesome-icon
           icon="fa-solid fa-arrow-right-to-bracket"
@@ -37,7 +37,7 @@ library.add(faBell, faArrowRightToBracket, faArrowRightFromBracket);
 @import '../assets/styles/common/typho.scss';
 
 .container-row {
-  @include container(row, space-between, center, 100%, auto);
+  @include container(row, space-between, center, 100%, 120px);
   background-color: $blue;
 }
 

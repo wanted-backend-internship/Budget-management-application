@@ -61,7 +61,8 @@ library.add(faSackDollar, faChartPie, faSliders);
 }
 
 .content-row {
-  @include container(row, center, center, 100%, 100%);
+  @include container(row, flex-start, center, 100%, 100%);
+  margin-left: 50px;
   text-decoration: none;
   color: inherit;
 }

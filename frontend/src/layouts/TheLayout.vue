@@ -5,13 +5,13 @@ import TheFooter from './TheFooter.vue';
 
 <template>
   <div class="container-col">
-    <div class="content-col" style="overflow-y: hidden; height: 120px">
+    <div class="content-col header">
       <TheHeader />
     </div>
-    <div class="content-col" style="top: 120px; overflow-y: scroll">
+    <div class="content-col router-view">
       <router-view />
     </div>
-    <div class="content-row" style="overflow-y: hidden">
+    <div class="content-row footer">
       <TheFooter />
     </div>
   </div>
@@ -21,19 +21,25 @@ import TheFooter from './TheFooter.vue';
 @import '../assets/styles/common/container';
 @import '../assets/styles/color/_color.scss';
 
-.container-col {
-  @include container(column, flex-start, flex-start, 100%, 100%);
-}
-
-.content-col {
-  @include container(column, flex-start, flex-start, 100%, 60%);
+.content-col.router-view {
+  @include container(column, flex-start, flex-start, 100%, calc(100% - 240px));
   position: fixed;
+  top: 120px;
+  overflow-y: scroll;
 }
 
-.content-row {
-  @include container(row, center, center, 100%, auto);
+.content-col.header {
+  @include container(column, flex-start, flex-start, 100%, 120px);
+  position: fixed;
+  top: 0;
+  overflow-y: hidden;
+}
+
+.content-row.footer {
+  @include container(row, center, center, 100%, 120px);
   background-color: white;
   position: fixed;
   bottom: 0;
+  overflow-y: hidden;
 }
 </style>
