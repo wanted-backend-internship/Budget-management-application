@@ -1,8 +1,7 @@
 package com.example.budget.domain.user;
 
-import com.example.budget.domain.budget.entity.Budget;
-import com.example.budget.domain.budget.entity.BudgetEditor;
-import com.example.budget.domain.expenditure.Expenditure;
+import com.example.budget.domain.budget.domain.Budget;
+import com.example.budget.domain.expenditure.domain.Expenditure;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -18,7 +17,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.transaction.annotation.Transactional;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
