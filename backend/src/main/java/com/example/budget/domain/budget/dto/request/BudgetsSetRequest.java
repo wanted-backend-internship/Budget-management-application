@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BudgetCreateRequest {
+public class BudgetsSetRequest {
     private String category;
     private Long percentage;
 }
