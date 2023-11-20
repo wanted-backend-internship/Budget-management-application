@@ -53,7 +53,11 @@ public enum ErrorType {
     BUDGET_PERCENT_ERROR(HttpStatus.BAD_REQUEST, "BUDGET-001", "예산은 총 100 퍼센트여야 합니다."),
 
     // 찾는 예산이 없는 경우
-    BUDGET_NOT_FOUND(HttpStatus.BAD_REQUEST, "BUDGET-002", "해당하는 예산이 존재하지 않습니다.");
+    BUDGET_NOT_FOUND(HttpStatus.BAD_REQUEST, "BUDGET-002", "해당하는 예산이 존재하지 않습니다."),
+
+    // 찾는 지출이 없는 경우
+    EXPENDITURE_NOT_FOUND(HttpStatus.BAD_REQUEST, "BUDGET-002", "해당하는 지출이 존재하지 않습니다.");
+
 
 
     private final HttpStatus status;

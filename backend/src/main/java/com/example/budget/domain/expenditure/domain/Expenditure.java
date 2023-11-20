@@ -1,4 +1,4 @@
-package com.example.budget.domain.expenditure;
+package com.example.budget.domain.expenditure.domain;
 
 import com.example.budget.domain.user.User;
 import jakarta.persistence.Entity;
@@ -28,6 +28,7 @@ public class Expenditure {
     private Long expenditureAmount;
     private LocalDateTime expenditureAt;
     private String memo;
+    private Boolean isReadable;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -38,5 +39,22 @@ public class Expenditure {
         if (!user.getExpenditures().contains(this)) {
             user.addExpenditure(this);
         }
+    }
+
+    public ExpenditureEditor.ExpenditureEditorBuilder toUpdate() {
+        return ExpenditureEditor.builder()
+                .category(category)
+                .expenditureAmount(expenditureAmount)
+                .expenditureAt(expenditureAt)
+                .memo(memo)
+                .isReadable(isReadable);
+    }
+
+    public void update(ExpenditureEditor expenditureEditor){
+        category = expenditureEditor.getCategory();
+        expenditureAmount = expenditureEditor.getExpenditureAmount();
+        expenditureAt = expenditureEditor.getExpenditureAt();
+        memo = expenditureEditor.getMemo();
+        isReadable = expenditureEditor.getIsReadable();
     }
 }
