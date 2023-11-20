@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BudgetController {
     private final BudgetService budgetService;
 
-    @PatchMapping(value = "/me")
+    @PatchMapping(value = "/total")
     public ResponseEntity<?> setBudgetTotal (@RequestBody BudgetTotalSetRequest budgetTotalSetRequest, HttpServletRequest httpServletRequest) {
         try {
             BudgetSetResponse budgetSetResponse = budgetService.setBudgetTotal(budgetTotalSetRequest, httpServletRequest);
@@ -32,7 +32,7 @@ public class BudgetController {
         }
     }
 
-    @PostMapping(value = "")
+    @PostMapping(value = "/setting")
     public ResponseEntity<?> setBudgets (@RequestBody List<BudgetsSetRequest> budgetsSetRequests, HttpServletRequest httpServletRequest) {
         try {
             budgetService.setBudgets(budgetsSetRequests, httpServletRequest);
