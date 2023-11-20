@@ -29,6 +29,14 @@ const routes = [
     path: '/budgets/me',
     component: () => import('../components/budget/BudgetDetail.vue'),
   },
+  {
+    path: '/expenditures',
+    component: () => import('../views/TheExpenditure.vue'),
+  },
+  {
+    path: '/expenditures/add',
+    component: () => import('../components/expenditure/CreateExpenditure.vue'),
+  },
 ];
 
 const router = createRouter({
