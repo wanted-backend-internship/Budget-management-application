@@ -1,9 +1,11 @@
 package com.example.budget.domain.user;
 
 import com.example.budget.domain.budget.entity.Budget;
+import com.example.budget.domain.budget.entity.BudgetEditor;
 import com.example.budget.domain.expenditure.Expenditure;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,6 +18,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -30,11 +33,12 @@ public class User {
     private String email;
     private String username;
     private String password;
+    private Long budgetTotal;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Budget> budgets = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true,  fetch = FetchType.LAZY)
     private List<Expenditure> expenditures = new ArrayList<>();
 
     // 연관 관계 편의 메서드
@@ -46,5 +50,14 @@ public class User {
     public void addExpenditure(Expenditure expenditure) {
         this.expenditures.add(expenditure);
         expenditure.addUser(this);
+    }
+
+    public UserEditor.UserEditorBuilder toUpdate() {
+        return UserEditor.builder()
+                .budgetTotal(budgetTotal);
+    }
+
+    public void update(UserEditor userEditor){
+        budgetTotal = userEditor.getBudgetTotal();
     }
 }

@@ -10,10 +10,11 @@ public class UserInfoService {
     private final AuthUtil authUtil;
 
     public UserInfoResponse findCurrentUser() {
-        User user = authUtil.getLoginUser().get();
+        User user = authUtil.getLoginUser();
         UserInfoResponse userInfoResponse = UserInfoResponse.builder()
                 .userId(user.getId())
                 .username(user.getUsername())
+                .budgetTotal(user.getBudgetTotal())
                 .build();
 
         return userInfoResponse;
