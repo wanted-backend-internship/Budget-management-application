@@ -4,8 +4,7 @@ import com.example.budget.domain.budget.dto.request.BudgetsSetRequest;
 import com.example.budget.domain.budget.dto.request.BudgetTotalSetRequest;
 import com.example.budget.domain.budget.dto.response.BudgetResponse;
 import com.example.budget.domain.budget.dto.response.BudgetSetResponse;
-import com.example.budget.domain.budget.entity.Budget;
-import com.example.budget.domain.budget.entity.BudgetEditor;
+import com.example.budget.domain.budget.domain.Budget;
 import com.example.budget.domain.user.User;
 import com.example.budget.domain.user.UserEditor;
 import com.example.budget.domain.user.UserRepository;
@@ -23,14 +22,13 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class BudgetService {
     private final BudgetRepository budgetRepository;
-    private final UserRepository userRepository;
     private final AuthUtil authUtil;
 
     @Transactional
     public BudgetSetResponse setBudgetTotal(BudgetTotalSetRequest budgetTotalSetRequest, HttpServletRequest httpServletRequest) {
         authUtil.isLoggedInUserSameCurrentUser(httpServletRequest);
 
-        User user = authUtil.getLoginUser();
+        User user = authUtil.getLoginUserForLazy();
 
         UserEditor.UserEditorBuilder userEditorBuilder = user.toUpdate();
         UserEditor userEditor = userEditorBuilder
@@ -38,7 +36,6 @@ public class BudgetService {
                 .build();
 
         user.update(userEditor);
-        userRepository.save(user);
 
         BudgetSetResponse budgetSetResponse = BudgetSetResponse.builder()
                 .budgetTotal(user.getBudgetTotal())

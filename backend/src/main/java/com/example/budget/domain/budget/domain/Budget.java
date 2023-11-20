@@ -1,4 +1,4 @@
-package com.example.budget.domain.budget.entity;
+package com.example.budget.domain.budget.domain;
 
 import com.example.budget.domain.user.User;
 import jakarta.persistence.Entity;

@@ -115,6 +115,7 @@ const handleBudgetSubmit = async () => {
 
 .content-row {
   @include container(row, flex-start, center, 100%, auto);
+  margin-bottom: 50px;
 }
 
 .select-box {
