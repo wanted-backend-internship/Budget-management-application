@@ -40,6 +40,7 @@ const handleExpenditureSubmit = async () => {
 
     const response = await createExpenditure(expenditureData);
     if (response.status === 200) {
+      await router.push('/expenditures');
     }
   } catch (error) {
     console.error(error);

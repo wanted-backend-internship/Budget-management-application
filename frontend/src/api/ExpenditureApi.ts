@@ -29,7 +29,46 @@ export const deleteExpenditure = async (expenditureId: number) => {
 };
 
 export const expenditureDetail = async (expenditureId: number) => {
-  const response = await axiosInstance.get('/budgets/' + expenditureId);
+  const response = await axiosInstance.get('/expenditures/' + expenditureId);
+  console.log(response.data);
+  return response;
+};
+
+export const searchWithCategory = async (expenditureData: {
+  startDate: string;
+  endDate: string;
+  category: string;
+}) => {
+  const response = await axiosInstance.post(
+    '/expenditures/search/category',
+    expenditureData,
+  );
+  console.log(response.data);
+  return response;
+};
+
+export const searchWithMoneyRange = async (expenditureData: {
+  startDate: string;
+  endDate: string;
+  minMoney: number;
+  maxMoney: number;
+}) => {
+  const response = await axiosInstance.post(
+    '/expenditures/search/money-range',
+    expenditureData,
+  );
+  console.log(response.data);
+  return response;
+};
+
+export const normalSearch = async (expenditureData: {
+  startDate: string;
+  endDate: string;
+}) => {
+  const response = await axiosInstance.post(
+    '/expenditures/search',
+    expenditureData,
+  );
   console.log(response.data);
   return response;
 };

@@ -37,6 +37,10 @@ const routes = [
     path: '/expenditures/add',
     component: () => import('../components/expenditure/CreateExpenditure.vue'),
   },
+  {
+    path: '/expenditures/search',
+    component: () => import('../components/expenditure/SearchExpenditure.vue'),
+  },
 ];
 
 const router = createRouter({

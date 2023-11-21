@@ -19,13 +19,13 @@ library.add(faUser, faChartPie, faChartSimple, faReceipt);
     <font-awesome-icon icon="fa-solid fa-chart-pie" class="icon" />
     <div class="font_menu">예산 설정</div>
   </router-link>
-  <router-link to="/expenditures/add" class="container-col">
+  <router-link to="/expenditures" class="container-col">
     <font-awesome-icon icon="fa-solid fa-receipt" class="icon" />
-    <div class="font_menu">지출 등록</div>
+    <div class="font_menu">지출</div>
   </router-link>
   <div class="container-col">
     <font-awesome-icon icon="fa-solid fa-chart-simple" class="icon" />
-    <div class="font_menu">지출 통계</div>
+    <div class="font_menu">레포트</div>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ library.add(faUser, faChartPie, faChartSimple, faReceipt);
 @import '../assets/styles/color/_color.scss';
 
 .container-col {
-  @include container(column, center, center, auto, auto);
+  @include container(column, center, center, 116.5px, auto);
   text-decoration: none;
   color: inherit;
 }

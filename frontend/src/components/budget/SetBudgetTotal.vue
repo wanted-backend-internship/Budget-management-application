@@ -17,7 +17,7 @@ const handleBudget = async () => {
       userInfo = userInfo ? JSON.parse(userInfo) : {};
       userInfo.budgetTotal = response.data.budgetTotal;
       localStorage.setItem('userInfo', JSON.stringify(userInfo));
-      // await router.push('/budgets/setting');
+      await router.push('/budgets/setting');
     }
   } catch (error) {
     console.log(error);
