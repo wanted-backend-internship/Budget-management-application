@@ -1,7 +1,9 @@
 <br>
 <br>
 
-<img src="https://github.com/wanted-backend-internship/budget-management-application/assets/119668620/5a2fd1cd-5e9b-4b6b-8e6a-6a75e8bb1ab3" width=350/>
+<div align="center">
+    <img src="https://github.com/wanted-backend-internship/budget-management-application/assets/119668620/5a2fd1cd-5e9b-4b6b-8e6a-6a75e8bb1ab3" width=350/>   
+</div>
 
 <br>
 <br>
@@ -49,14 +51,258 @@
 
 ## 구현 기능 시연
 ### 유저 기능
+https://github.com/wanted-backend-internship/budget-management-application/assets/119668620/a65ee133-f111-4c60-91ff-0f69980a9984
 ### 예산 설정 및 설계
+🔗 https://sieun96.notion.site/0d1b5d82f5c24779b834ff641c92d4f0?pvs=4
 ### 지출 CRUD
+🔗 https://sieun96.notion.site/0d1b5d82f5c24779b834ff641c92d4f0?pvs=4
 ### 지출 조회
+🔗 https://sieun96.notion.site/0d1b5d82f5c24779b834ff641c92d4f0?pvs=4
+#### 일반 조회
+```json
+[
+    [
+        "2023-11-21",
+        {
+            "청약": [
+                "청약",
+                10000,
+                [
+                    {
+                        "id": 10,
+                        "category": "청약",
+                        "expenditureAmount": 10000,
+                        "expenditureAt": "2023-11-21T15:13:00",
+                        "memo": "dd",
+                        "isReadable": true
+                    }
+                ]
+            ],
+            "경조사": [
+                "경조사",
+                100000,
+                [
+                    {
+                        "id": 13,
+                        "category": "경조사",
+                        "expenditureAmount": 100000,
+                        "expenditureAt": "2023-11-21T15:14:00",
+                        "memo": "dd",
+                        "isReadable": true
+                    }
+                ]
+            ]
+        }
+    ],
+    [
+        "2023-11-20",
+        {
+            "보험비": [
+                "보험비",
+                1000000,
+                [
+                    {
+                        "id": 11,
+                        "category": "보험비",
+                        "expenditureAmount": 1000000,
+                        "expenditureAt": "2023-11-20T15:13:00",
+                        "memo": "dd",
+                        "isReadable": true
+                    }
+                ]
+            ],
+            "통신비": [
+                "통신비",
+                100000,
+                [
+                    {
+                        "id": 12,
+                        "category": "통신비",
+                        "expenditureAmount": 100000,
+                        "expenditureAt": "2023-11-20T15:13:00",
+                        "memo": "sss",
+                        "isReadable": true
+                    }
+                ]
+            ],
+            "식비": [
+                "식비",
+                100000,
+                [
+                    {
+                        "id": 17,
+                        "category": "식비",
+                        "expenditureAmount": 100000,
+                        "expenditureAt": "2023-11-20T15:34:00",
+                        "memo": "fff",
+                        "isReadable": true
+                    }
+                ]
+            ]
+        }
+    ],
+    [
+        "2023-11-22",
+        {
+            "관리비": [
+                "관리비",
+                30000,
+                [
+                    {
+                        "id": 14,
+                        "category": "관리비",
+                        "expenditureAmount": 30000,
+                        "expenditureAt": "2023-11-22T15:14:00",
+                        "memo": "dd",
+                        "isReadable": true
+                    }
+                ]
+            ],
+            "식비": [
+                "식비",
+                10000,
+                [
+                    {
+                        "id": 16,
+                        "category": "식비",
+                        "expenditureAmount": 10000,
+                        "expenditureAt": "2023-11-22T19:34:00",
+                        "memo": "dd",
+                        "isReadable": true
+                    }
+                ]
+            ]
+        }
+    ],
+    [
+        "2023-11-23",
+        {
+            "식비": [
+                "식비",
+                10000,
+                [
+                    {
+                        "id": 15,
+                        "category": "식비",
+                        "expenditureAmount": 10000,
+                        "expenditureAt": "2023-11-23T15:34:00",
+                        "memo": "dd",
+                        "isReadable": true
+                    }
+                ]
+            ]
+        }
+    ]
+]
+```
+#### 카테고리 조회
+```json
+[
+    [
+        "2023-11-23",
+        "식비",
+        10000,
+        [
+            {
+                "id": 15,
+                "category": "식비",
+                "expenditureAmount": 10000,
+                "expenditureAt": "2023-11-23T15:34:00",
+                "memo": "dd",
+                "isReadable": true
+            }
+        ]
+    ],
+    [
+        "2023-11-22",
+        "식비",
+        10000,
+        [
+            {
+                "id": 16,
+                "category": "식비",
+                "expenditureAmount": 10000,
+                "expenditureAt": "2023-11-22T19:34:00",
+                "memo": "dd",
+                "isReadable": true
+            }
+        ]
+    ],
+    [
+        "2023-11-20",
+        "식비",
+        100000,
+        [
+            {
+                "id": 17,
+                "category": "식비",
+                "expenditureAmount": 100000,
+                "expenditureAt": "2023-11-20T15:34:00",
+                "memo": "fff",
+                "isReadable": true
+            }
+        ]
+    ]
+]
+```
+#### 최소 최대 금액 설정하여 조회
+```json
+[
+    [
+        "2023-11-21",
+        "청약",
+        10000,
+        [
+            {
+                "id": 10,
+                "category": "청약",
+                "expenditureAmount": 10000,
+                "expenditureAt": "2023-11-21T15:13:00",
+                "memo": "dd",
+                "isReadable": true
+            }
+        ]
+    ],
+    [
+        "2023-11-23",
+        "식비",
+        10000,
+        [
+            {
+                "id": 15,
+                "category": "식비",
+                "expenditureAmount": 10000,
+                "expenditureAt": "2023-11-23T15:34:00",
+                "memo": "dd",
+                "isReadable": true
+            }
+        ]
+    ],
+    [
+        "2023-11-22",
+        "식비",
+        10000,
+        [
+            {
+                "id": 16,
+                "category": "식비",
+                "expenditureAmount": 10000,
+                "expenditureAt": "2023-11-22T19:34:00",
+                "memo": "dd",
+                "isReadable": true
+            }
+        ]
+    ]
+]
+```
 
 <br>
 
 ## 프로젝트 노션 링크
 🔗 https://sieun96.notion.site/1d48854cc69a4565bd1d9f55fc1cb400?pvs=4
-- 다이어그램을 확인할 수 있어요.
+- 다이어그램과 시연 영상을 확인할 수 있어요.
 - 프로젝트를 진행하면서 한 고찰을 확인할 수 있어요.
 - 프로젝트를 마치며 회고한 내용을 볼 수 있어요.
+
+<br>
+
