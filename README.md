@@ -127,7 +127,7 @@ https://github.com/wanted-backend-internship/budget-management-application/asset
             ],
             "식비": [
                 "식비",
-                100000,
+                120000,
                 [
                     {
                         "id": 17,
@@ -135,6 +135,14 @@ https://github.com/wanted-backend-internship/budget-management-application/asset
                         "expenditureAmount": 100000,
                         "expenditureAt": "2023-11-20T15:34:00",
                         "memo": "fff",
+                        "isReadable": true
+                    },
+                    {
+                        "id": 18,
+                        "category": "식비",
+                        "expenditureAmount": 20000,
+                        "expenditureAt": "2023-11-20T15:52:00",
+                        "memo": "ㅇㅇ",
                         "isReadable": true
                     }
                 ]
@@ -231,7 +239,7 @@ https://github.com/wanted-backend-internship/budget-management-application/asset
     [
         "2023-11-20",
         "식비",
-        100000,
+        120000,
         [
             {
                 "id": 17,
@@ -239,6 +247,14 @@ https://github.com/wanted-backend-internship/budget-management-application/asset
                 "expenditureAmount": 100000,
                 "expenditureAt": "2023-11-20T15:34:00",
                 "memo": "fff",
+                "isReadable": true
+            },
+            {
+                "id": 18,
+                "category": "식비",
+                "expenditureAmount": 20000,
+                "expenditureAt": "2023-11-20T15:52:00",
+                "memo": "ㅇㅇ",
                 "isReadable": true
             }
         ]
