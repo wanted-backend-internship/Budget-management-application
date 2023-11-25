@@ -26,13 +26,14 @@ import TheFooter from './TheFooter.vue';
   position: fixed;
   top: 120px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .content-col.header {
   @include container(column, flex-start, flex-start, 100%, 120px);
   position: fixed;
   top: 0;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .content-row.footer {
@@ -40,6 +41,6 @@ import TheFooter from './TheFooter.vue';
   background-color: white;
   position: fixed;
   bottom: 0;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 </style>

@@ -20,7 +20,7 @@
     "@vue/cli-service": "^5.0.8",
     "axios": "^1.6.1",
     "bootstrap-vue-3": "^0.5.1",
-    "chart.js": "^4.4.0",
+    "chart.js": "^2.9.4",
     "infinite-loading-vue3-ts": "^1.0.5",
     "pinia": "^2.1.7",
     "sass": "^1.69.5",
@@ -28,7 +28,8 @@
     "vue": "^3.3.8",
     "vue-chartjs": "^5.2.0",
     "vue-query": "^1.26.0",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.13",
+    "vue3-chart-v2": "^0.8.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.10.0",

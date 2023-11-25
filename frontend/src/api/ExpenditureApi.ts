@@ -72,3 +72,9 @@ export const normalSearch = async (expenditureData: {
   console.log(response.data);
   return response;
 };
+
+export const todayExpenditure = async () => {
+  const response = await axiosInstance.post('/expenditures/today');
+  console.log(response.data);
+  return response;
+};
