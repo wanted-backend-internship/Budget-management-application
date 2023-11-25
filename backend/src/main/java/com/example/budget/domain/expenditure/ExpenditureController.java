@@ -1,6 +1,7 @@
 package com.example.budget.domain.expenditure;
 
 import com.example.budget.domain.budget.dto.request.BudgetsSetRequest;
+import com.example.budget.domain.expenditure.domain.Expenditure;
 import com.example.budget.domain.expenditure.dto.request.ExpenditureCreateRequest;
 import com.example.budget.domain.expenditure.dto.request.ExpenditureUpdateRequest;
 import com.example.budget.domain.expenditure.dto.response.ExpenditureResponse;
@@ -67,4 +68,16 @@ public class ExpenditureController {
             return ResponseEntity.status(apiException.getErrorType().getStatus()).body(apiException.getErrorType().getMessage());
         }
     }
+
+    @PostMapping(value = "/today")
+    public ResponseEntity<?> expenditureToday() {
+        try {
+            List<Object[]> expenditures = expenditureService.todayExpenditures();
+            return ResponseEntity.ok(expenditures);
+
+        } catch (ApiException apiException) {
+            return ResponseEntity.status(apiException.getErrorType().getStatus()).body(apiException.getErrorType().getMessage());
+        }
+    }
+
 }

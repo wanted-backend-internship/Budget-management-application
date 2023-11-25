@@ -10,6 +10,8 @@ import com.example.budget.global.exception.ApiException;
 import com.example.budget.global.exception.ErrorType;
 import com.example.budget.global.util.AuthUtil;
 import jakarta.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -46,8 +48,7 @@ public class ExpenditureService {
     public void updateExpenditure(ExpenditureUpdateRequest expenditureUpdateRequest, HttpServletRequest httpServletRequest) {
         authUtil.isLoggedInUserSameCurrentUser(httpServletRequest);
 
-        Long userId = authUtil.getLoginUserIndex();
-        Expenditure expenditure = expenditureRepository.findByUserId(userId)
+        Expenditure expenditure = expenditureRepository.findById(expenditureUpdateRequest.getId())
                 .orElseThrow(() -> new ApiException(ErrorType.EXPENDITURE_NOT_FOUND));
 
         ExpenditureEditor.ExpenditureEditorBuilder expenditureEditorBuilder = expenditure.toUpdate();
@@ -87,5 +88,17 @@ public class ExpenditureService {
                 .build();
 
         return expenditureResponse;
+    }
+
+    @Transactional
+    public List<Object[]> todayExpenditures () {
+        Long userId = authUtil.getLoginUserIndex();
+
+        LocalDate date = LocalDate.now(); // 현재 날짜
+        LocalDateTime startOfDay = date.atStartOfDay(); // 하루의 시작
+        LocalDateTime endOfDay = date.atTime(23, 59, 59); // 하루의 끝
+
+        List<Object[]> expenditures = expenditureRepository.findUserExpendituresByDateAndCategory(userId, startOfDay, endOfDay);
+        return expenditures;
     }
 }
