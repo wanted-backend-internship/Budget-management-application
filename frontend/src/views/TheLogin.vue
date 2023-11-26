@@ -19,6 +19,7 @@ const handleLogin = async () => {
     const response = await localLogin(userData);
     if (response.status == 200) {
       authStore.setLoginStatus(true);
+      console.log(authStore.isLoggedIn);
 
       const userInfoResponse = await loginUserInfo();
       localStorage.setItem('userInfo', JSON.stringify(userInfoResponse));

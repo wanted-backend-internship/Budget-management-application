@@ -30,5 +30,6 @@ export const localLogin = async (loginData: {
 };
 
 export const logout = async () => {
-  await apiClient.post('/logout');
+  const response = await apiClient.post('/logout');
+  return response;
 };
