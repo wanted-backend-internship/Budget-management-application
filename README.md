@@ -53,6 +53,9 @@
 ## 구현 기능 시연
 ### 유저 기능
 https://github.com/wanted-backend-internship/budget-management-application/assets/119668620/a65ee133-f111-4c60-91ff-0f69980a9984
+
+https://github.com/wanted-backend-internship/budget-management-application/assets/119668620/d3692255-63f5-4bab-b8c2-83e4854cd502
+
 ### 예산 설정 및 설계
 🔗 https://sieun96.notion.site/0d1b5d82f5c24779b834ff641c92d4f0?pvs=4
 ### 지출 CRUD
