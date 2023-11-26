@@ -1,7 +1,5 @@
 package com.example.budget.domain.expenditure;
 
-import com.example.budget.domain.budget.dto.request.BudgetsSetRequest;
-import com.example.budget.domain.expenditure.domain.Expenditure;
 import com.example.budget.domain.expenditure.dto.request.ExpenditureCreateRequest;
 import com.example.budget.domain.expenditure.dto.request.ExpenditureUpdateRequest;
 import com.example.budget.domain.expenditure.dto.response.ExpenditureResponse;
