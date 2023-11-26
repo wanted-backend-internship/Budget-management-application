@@ -59,8 +59,8 @@ https://github.com/wanted-backend-internship/budget-management-application/asset
 🔗 https://sieun96.notion.site/0d1b5d82f5c24779b834ff641c92d4f0?pvs=4
 ### 지출 조회
 🔗 https://sieun96.notion.site/0d1b5d82f5c24779b834ff641c92d4f0?pvs=4
-#### 조회별 데이터 형식
-🔗 https://sieun96.notion.site/21fac8a7382e4b99b346b3f09444c8f4?pvs=4
+- 조회별 데이터 형식 :
+  🔗 https://sieun96.notion.site/21fac8a7382e4b99b346b3f09444c8f4?pvs=4
 ### 지출 레포트
 https://github.com/wanted-backend-internship/budget-management-application/assets/119668620/f5b27103-da9d-4053-93a4-355424007a0f
 
