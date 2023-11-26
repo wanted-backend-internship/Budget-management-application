@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { Chart, registerables } from 'chart.js';
 import { todayExpenditure } from '../api/ExpenditureApi.ts';
+import { Chart, registerables } from 'chart.js';
 
 Chart.register(...registerables);
+
 const chartCanvas = ref(null);
 let myChart = null;
 

@@ -23,10 +23,10 @@ library.add(faUser, faChartPie, faChartSimple, faReceipt);
     <font-awesome-icon icon="fa-solid fa-receipt" class="icon" />
     <div class="font_menu">지출</div>
   </router-link>
-  <div class="container-col">
+  <router-link to="/expenditures/statistics" class="container-col">
     <font-awesome-icon icon="fa-solid fa-chart-simple" class="icon" />
     <div class="font_menu">레포트</div>
-  </div>
+  </router-link>
 </template>
 
 <style scoped lang="scss">

@@ -41,6 +41,10 @@ const routes = [
     path: '/expenditures/search',
     component: () => import('../components/expenditure/SearchExpenditure.vue'),
   },
+  {
+    path: '/expenditures/statistics',
+    component: () => import('../views/TheStatistics.vue'),
+  },
 ];
 
 const router = createRouter({
