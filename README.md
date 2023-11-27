@@ -79,7 +79,7 @@ https://github.com/wanted-backend-internship/budget-management-application/asset
 <br>
 
 ## 프로젝트 노션 링크
-🔗 https://sieunnnn.oopy.io/1d48854cc69a4565bd1d9f55fc1cb400
+🔗 https://sieunnnn.oopy.io/1d48854c-c69a-4565-bd1d-9f55fc1cb400
 - 다이어그램과 시연 영상을 확인할 수 있어요.
 - 프로젝트를 진행하면서 한 고찰을 확인할 수 있어요.
 - 프로젝트를 마치며 회고한 내용을 볼 수 있어요.
