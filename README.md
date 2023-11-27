@@ -57,13 +57,13 @@ https://github.com/wanted-backend-internship/budget-management-application/asset
 https://github.com/wanted-backend-internship/budget-management-application/assets/119668620/d3692255-63f5-4bab-b8c2-83e4854cd502
 
 ### 예산 설정 및 설계
-🔗 https://sieunnnn.oopy.io/0d1b5d82f5c24779b834ff641c92d4f0?pvs=4
+🔗 https://sieunnnn.oopy.io/0d1b5d82-f5c2-4779-b834-ff641c92d4f0
 ### 지출 CRUD
-🔗 https://sieunnnn.oopy.io/0d1b5d82f5c24779b834ff641c92d4f0?pvs=4
+🔗 https://sieunnnn.oopy.io/0d1b5d82f5c24779b834ff641c92d4f0
 ### 지출 조회
-🔗 https://sieunnnn.oopy.io/0d1b5d82f5c24779b834ff641c92d4f0?pvs=4
+🔗 https://sieunnnn.oopy.io/0d1b5d82f5c24779b834ff641c92d4f0
 - 조회별 데이터 형식 :
-  🔗 https://sieunnnn.oopy.io/21fac8a7382e4b99b346b3f09444c8f4?pvs=4
+  🔗 https://sieunnnn.oopy.io/21fac8a7382e4b99b346b3f09444c8f4
 ### 지출 레포트
 https://github.com/wanted-backend-internship/budget-management-application/assets/119668620/f5b27103-da9d-4053-93a4-355424007a0f
 
@@ -79,7 +79,7 @@ https://github.com/wanted-backend-internship/budget-management-application/asset
 <br>
 
 ## 프로젝트 노션 링크
-🔗 https://sieunnnn.oopy.io/1d48854cc69a4565bd1d9f55fc1cb400?pvs=4
+🔗 https://sieunnnn.oopy.io/1d48854cc69a4565bd1d9f55fc1cb400
 - 다이어그램과 시연 영상을 확인할 수 있어요.
 - 프로젝트를 진행하면서 한 고찰을 확인할 수 있어요.
 - 프로젝트를 마치며 회고한 내용을 볼 수 있어요.
